@@ -1,6 +1,6 @@
 NAME = push_swap
 
-MKB = make bonus -s
+MKL = make -s -C libft && make bonus -s -C libft
 MK = make -s
 MKD = mkdir -p
 RM = rm -rf
@@ -21,7 +21,7 @@ DIR_OBJs = OBJECTS
 
 OBJs = $(addprefix $(DIR_OBJs)/,$(SRCs:%.c=%.o))
 
-all: make_lib $(NAME)
+all: dir_lib $(NAME)
 
 $(NAME): $(OBJs)
 	ar rcs $(NAME) $(OBJs)
@@ -32,8 +32,11 @@ $(DIR_OBJs)/%.o: %.c | $(DIR_OBJs)
 $(DIR_OBJs):
 	$(MKD) $(DIR_OBJs)
 
-make_lib :
-		$(MKB) -C libft
+dir_lib: 
+	$(MKL)
+
+
+
 
 clean:
 	$(MK) fclean -C libft
