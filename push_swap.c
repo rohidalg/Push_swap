@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/06/19 15:17:13 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:47:12 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,31 @@ static void ft_putin_stack(t_list **stack, int argc, char **argv)
 int main (int argc, char **argv)
 {
     t_list  **stack_a;
-    // t_list  **stack_b;
+    t_list  **stack_b;
     
     if(argc < 2)
         return(-1);
     ft_check_argv(argc, argv);
     stack_a = (t_list **)malloc(sizeof(t_list));
-    // stack_b = (t_list **)malloc(sizeof(t_list));
+    stack_b = (t_list **)malloc(sizeof(t_list));
     *stack_a = NULL;
-    // stack_b = NULL;
+    *stack_b = NULL;
     ft_putin_stack(stack_a, argc, argv);
+    // ft_putin_stack(stack_b, argc, argv);
+    printf("===============\n");
     ft_print_list(*stack_a);
+    printf("---------------\n");
+    ft_print_list(*stack_b);
+    printf("===============\n");
+    ss(stack_a, stack_b);
+    printf("===============\n");
+    ft_print_list(*stack_a);
+    printf("---------------\n");
+    ft_print_list(*stack_b);
+    printf("===============\n");
+    ft_free_stack(stack_a);
+    ft_free_stack(stack_b);
+
     
     return (0);
 }
