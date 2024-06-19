@@ -6,35 +6,61 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/05/24 15:20:29 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/06/19 15:17:13 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-// void ft_check_argv(t_list_ps **stack, int argc, char **argv)
-// {
-//     char **args;
-//     // int i;
+void ft_print_list(t_list *stack)
+{
+    t_list *tmp;
     
-//     // i = 0;
-//     if (argc == 2)
-//         args = ft_split(argv[1], ' ');
-//     else
-//     {
-//         // i = 1;
-//         args = argv;
-//     }
-//     printf("%d\n", **args);
-// }
+    tmp = stack;
+    while(tmp != NULL)
+    {
+        ft_putnbr_fd(tmp->nmb, 1);
+        ft_putendl_fd("", 1);
+        tmp = tmp->next;
+    }
+}
+
+static void ft_putin_stack(t_list **stack, int argc, char **argv)
+{
+    t_list *new;
+    char **args;
+    int i;
+
+    i = 0;
+    if (argc == 2)
+        args = ft_split(argv[1], ' ');
+    else
+    {
+        i = 1;
+        args = argv;
+    }
+    while (args[i])
+    {
+        new = ft_lstnew(ft_atoi(args[i]));
+        ft_lstadd_back(stack, new);
+        i++;
+    }
+}
 
 int main (int argc, char **argv)
 {
-    if (argc < 2)
-        return (-1);
+    t_list  **stack_a;
+    // t_list  **stack_b;
     
-    printf("%d\n", **argv);
+    if(argc < 2)
+        return(-1);
+    ft_check_argv(argc, argv);
+    stack_a = (t_list **)malloc(sizeof(t_list));
+    // stack_b = (t_list **)malloc(sizeof(t_list));
+    *stack_a = NULL;
+    // stack_b = NULL;
+    ft_putin_stack(stack_a, argc, argv);
+    ft_print_list(*stack_a);
     
     return (0);
 }
