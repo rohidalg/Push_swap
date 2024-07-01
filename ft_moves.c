@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:49:49 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/06/19 18:50:11 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/07/01 19:22:51 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int sa(t_list **stack_a)
     ft_putendl_fd("sa", 1);
     return(0);
 }
+// sa = swap a // intercambia los 2 elementos superiores de la pila a
 
 int sb(t_list **stack_b)
 {
@@ -49,6 +50,7 @@ int sb(t_list **stack_b)
     ft_putendl_fd("sb", 1);
     return(0);
 }
+// sb = swap b // intercambia los 2 elementos superiores de la pila b
 
 int ss(t_list **stack_a, t_list **stack_b)
 {
@@ -57,35 +59,125 @@ int ss(t_list **stack_a, t_list **stack_b)
     ft_putendl_fd("ss",1);
     return(0);
 }
-
-// int push(t_list **stack_to, t_list  **stack_from)
-// {
-//     t_list  *tmp;
-//     t_list  *first_to;
-//     t_list  *first_from;
-
-//     if (ft_lstsize(*stack_from) == 0)
-//         return(-1);
-//     first_to = *stack_to;
-//     first_from = *stack_from;
-//     tmp = first_from;
-//     first_from = first_from->next;
-//     *stack_from = first_to;
-// }
-
-// int pa(t_list **stack_b, t_list **stack_a)
-// {
-    
-// }
-
-// sa = swap a // intercambia los 2 elementos superiores de la pila a
-// sb = swap b // intercambia los 2 elementos superiores de la pila b
 // ss = swap a + swap b // tanto sa como sb
+
+int push(t_list **stack_to, t_list  **stack_from)
+{
+    t_list  *tmp;
+    t_list  *first_to;
+    t_list  *first_from;
+
+    if (ft_lstsize(*stack_from) == 0)
+        return(-1);
+    first_to = *stack_to;
+    first_from = *stack_from;
+    tmp = first_from;
+    first_from = first_from->next;
+    *stack_from = first_from;
+	if (!first_to)
+	{
+		first_to = tmp;
+		first_to->next = NULL;
+		*stack_to = first_to;
+	}
+	else
+	{
+		tmp->next = first_to;
+		*stack_to = tmp;
+	}
+	return (0);
+}
+
+int pa(t_list **stack_b, t_list **stack_a)
+{
+    if (push(stack_b, stack_a) == -1)
+        return(-1);
+    ft_putendl_fd("pa", 1);
+    return (0);
+}
 // pa = push a // mueve el elemento superior de la pila b a la parte superior de la pila a
+
+int pb(t_list **stack_a, t_list **stack_b)
+{
+    if (push(stack_a, stack_b) == -1)
+        return(-1);
+    ft_putendl_fd("pb", 1);
+    return (0);
+}
 // pb = push b // mueve el elemento superior de la pila a a la parte superior de la pila b
+
+int rotate(t_list **stack_from)
+{
+    t_list *first;
+    t_list *last;
+
+    if (ft_lstsize(*stack_from) < 2)
+        return(-1);
+    first = *stack_from;
+    last = ft_lstlast(first);
+    *stack_from = first->next;
+    first->next = NULL;
+    last->next = first;
+    return (0);
+}
+
+int ra(t_list **stack_a)
+{
+    if (rotate(stack_a) == -1)
+        return(-1);
+    ft_putendl_fd("ra", 1);
+    return(0);
+}
 // ra = rotate a // desplaza todos los elementos de la pila a de abajo hacia arriba
+
+int rb(t_list **stack_b)
+{
+    if (rotate(stack_b) == -1)
+        return(-1);
+    ft_putendl_fd("rb", 1);
+    return(0);
+}
 // rb = rotate b // desplaza todos los elementos de la pila b de abajo hacia arriba
+
+int rr(t_list **stack_a, t_list **stack_b)
+{
+    if(ft_lstsize(*stack_a) < 2 || ft_lstsize(*stack_b) < 2)
+        return (-1);
+    rotate(stack_a);
+    rotate(stack_b);
+    ft_putendl_fd("rr", 1);
+    return(0);
+}
 // rr = rotate a + rotate b // tanto ra como rb
+
+int reverse_rotate(t_list **stack_from)
+{
+    t_list *first;
+    t_list *last;
+    
+    if (lstsize(*stack_from) < 2)
+        return(-1);
+    first = stack_from;
+    last = ft_lstlast(stack_from);
+    while(first)
+    {
+        if (first->next->next)
+        {
+            first->next = NULL;
+            break;
+        }
+        first = first->next;
+    }
+    last->next = *stack_from;
+    stack_from = last;
+    return(0);
+}
+
+int rra(t_list **stack_a)
+{
+    
+}
 // rra = reverse rotate a // desplaza todos los elementos de la pila a de arriba a abajo
+
 // rrb = reverse rotate b // desplaza todos los elementos de la pila b de arriba a abajo
 // rrr = reverse rotate a + reverse rotate b // tanto rra como rrb
