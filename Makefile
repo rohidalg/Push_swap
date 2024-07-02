@@ -15,7 +15,8 @@ INCLUDES = -I libft
 SRCs = ft_check_number.c \
 		push_swap.c \
 		ft_utils.c \
-		ft_moves.c
+		ft_moves.c \
+		ft_algorithms.c 
 
 
 DIR_OBJs = OBJECTS

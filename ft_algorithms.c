@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_algorithms.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 15:28:38 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/02 11:19:37 by rohidalg         ###   ########.fr       */
+/*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
+/*   Updated: 2024/07/02 13:10:17 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_stack(t_list **stack)
+void	ft_two_num(t_list **stack_from)
 {
-	t_list	*nmb;
-	t_list	*tmp;
+	// t_list *first;
+	// t_list *last;
 
-	nmb = *stack;
-	while (nmb)
+	// first = *stack_from;
+	// last = ft_lstlast(*stack_from);
+	if (ft_lstsize(*stack_from) == 2)
 	{
-		tmp = nmb;
-		nmb = nmb->next;
-		free(tmp);
+		ft_putendl_fd("es mayor\n", 1);
+		sa(stack_from);
 	}
-	free(stack);
 }
