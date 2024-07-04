@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:24:05 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/02 13:11:04 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/07/04 18:33:08 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		reverse_rotate(t_list **stack_from);
 int		rra(t_list **stack_a);
 int		rrb(t_list **stack_b);
 int		rrr(t_list **stack_a, t_list **stack_b);
-void	ft_two_num(t_list **stack_from);
+int	little_num(t_list **stack_from, int lit);
+void ft_options(t_list **stack_from);
 
 #endif
