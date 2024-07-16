@@ -6,82 +6,129 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/04 20:16:50 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/07/16 13:43:38 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	little_num(t_list **stack_from, int lit)
+void	ft_three_num(t_list **stack_a)
 {
 	t_list	*first;
-	int		little;
 
-	first = *stack_from;
-	little = first->nmb;
-	while (first->next)
+	first = *stack_a;
+	if (first->nmb > first->next->next->nmb)
 	{
-		first = first->next;
-		if (first->nmb < little && first->nmb > lit)
-			little = first->nmb;
+		if (first->nmb < first->next->nmb) //(B, C, A)
+		{
+			rra(stack_a);
+			printf("===============\n");
+			ft_print_list(*stack_a);
+			printf("===============\n");
+		}
+		else if (first->next->nmb > first->next->next->nmb) //(C, B, A)
+		{
+			sa(stack_a);
+			printf("===============\n");
+			ft_print_list(*stack_a);
+			printf("===============\n");
+			rra(stack_a);
+			printf("===============\n");
+			ft_print_list(*stack_a);
+			printf("===============\n");
+		}
+		else //(C, A, B)
+		{	
+			ra(stack_a);
+			printf("===============\n");
+			ft_print_list(*stack_a);
+			printf("===============\n");
+		}
 	}
-	return (little);
+	else if (first->nmb > first->next->nmb) //(B, A, C)
+	{
+		sa(stack_a);
+		printf("===============\n");
+		ft_print_list(*stack_a);
+		printf("===============\n");
+	}
+	else if (first->next->nmb > first->next->next->nmb) //(A, C, B)
+	{
+		rra(stack_a);
+		printf("===============\n");
+		ft_print_list(*stack_a);
+		printf("===============\n");
+		sa(stack_a);
+		printf("===============\n");
+		ft_print_list(*stack_a);
+		printf("===============\n");
+	}
 }
 
-int	ft_order(t_list **stack_from)
+void	ft_four_num(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*first;
-
-	first = *stack_from;
-	while (first && first->next)
-	{
-		if (first->nmb > first->next->nmb)
-			return (0);
-		first = first->next;
-	}
-	return (1);
-}
-
-void	ft_three_num(t_list **stack_from)
-{
-	t_list	*first;
-
-	first = *stack_from;
+	// t_list *first;
+	int distance;
+	
+	// first = *stack_a;
+	distance = ft_distance(stack_a, ft_little_num(stack_a, -1));
 	printf("===============\n");
-	ft_print_list(*stack_from);
+	ft_print_list(*stack_a);
 	printf("===============\n");
-	if (first->nmb > first->next->nmb)
+	if (distance == 1)
 	{
-		sa(stack_from);
+		sa(stack_a);
 		printf("===============\n");
-		ft_print_list(*stack_from);
+		ft_print_list(*stack_a);
 		printf("===============\n");
 	}
-	if (first->next->nmb > first->next->next->nmb)
+	else if (distance == 2)
 	{
-		rra(stack_from);
+		rra(stack_a);
 		printf("===============\n");
-		ft_print_list(*stack_from);
+		ft_print_list(*stack_a);
+		printf("===============\n");
+		rra(stack_a);
+		printf("===============\n");
+		ft_print_list(*stack_a);
 		printf("===============\n");
 	}
-	if (first->nmb > first->next->nmb)
+	else if (distance == 3)
 	{
-		printf("hola?\n");
-		sa(stack_from);
+		rra(stack_a);
 		printf("===============\n");
-		ft_print_list(*stack_from);
+		ft_print_list(*stack_a);
 		printf("===============\n");
-	}	
-}
-// (A, B, C), (A, C, B), (B, A, C), (B, C, A), (C, A, B), (C, B, A).
+	}
+	pb(stack_b, stack_a);
+	
+	printf("===============\n");
+	ft_print_list(*stack_a);
+	printf("---------------\n");
+	ft_print_list(*stack_b);
+	printf("===============\n");
+	
+	ft_three_num(stack_a);
+	
+	pa(stack_a, stack_b);
 
-void	ft_options(t_list **stack_from)
+	printf("===============\n");
+	ft_print_list(*stack_a);
+	printf("---------------\n");
+	ft_print_list(*stack_b);
+	printf("===============\n");
+
+}
+
+void	ft_options(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
-	size = ft_lstsize(*stack_from);
-	if (size == 2 && ft_order(stack_from) != 1)
-		sa(stack_from);
-	else if (size == 3 && ft_order(stack_from) != 1)
-		ft_three_num(stack_from);
+	size = ft_lstsize(*stack_a);
+	if (size == 2 && ft_order(stack_a) != 1)
+		sa(stack_a);
+	else if (size == 3 && ft_order(stack_a) != 1)
+		ft_three_num(stack_a);
+	else if (size == 4 && ft_order(stack_a) != 1)
+		ft_four_num(stack_a, stack_b);
 }

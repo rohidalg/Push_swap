@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/04 20:01:27 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/07/16 13:41:51 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 	// ft_print_list(*stack_b);
 	// printf("===============\n");
 
-	ft_options(stack_a);
+	ft_options(stack_a, stack_b);
 	
 	// printf("===============\n");
 	// ft_print_list(*stack_a);
