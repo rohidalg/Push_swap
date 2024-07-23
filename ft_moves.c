@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:49:49 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/02 13:11:46 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:09:00 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ss(t_list **stack_a, t_list **stack_b)
 }
 // ss = swap a + swap b // tanto sa como sb
 
-int	push(t_list **stack_to, t_list **stack_from)
+int	push(t_list **stack_from, t_list **stack_to)
 {
 	t_list	*tmp;
 	t_list	*first_to;

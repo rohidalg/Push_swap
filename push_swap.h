@@ -6,12 +6,14 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:24:05 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/16 13:09:16 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:32:56 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# define MIN -2147483648
 
 # include "libft/libft.h"
 
@@ -36,6 +38,9 @@ int		rrr(t_list **stack_a, t_list **stack_b);
 int		ft_little_num(t_list **stack_from, int lit);
 int		ft_distance(t_list **stack_from, int nmb);
 int		ft_order(t_list **stack_from);
+void	ft_three_num(t_list **stack_a);
+void	ft_four_num(t_list **stack_a, t_list **stack_b);
+void	ft_five_num(t_list **stack_a, t_list **stack_b);
 void	ft_options(t_list **stack_from, t_list **stack_to);
 
 #endif

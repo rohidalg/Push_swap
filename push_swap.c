@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/16 13:41:51 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:06:43 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,19 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	ft_putin_stack(stack_a, argc, argv);
 	// ft_putin_stack(stack_b, argc, argv);
-	// printf("===============\n");
-	// ft_print_list(*stack_a);
-	// printf("---------------\n");
-	// ft_print_list(*stack_b);
-	// printf("===============\n");
+	printf("===============\n");
+	ft_print_list(*stack_a);
+	printf("---------------\n");
+	ft_print_list(*stack_b);
+	printf("===============\n");
 
 	ft_options(stack_a, stack_b);
 	
-	// printf("===============\n");
-	// ft_print_list(*stack_a);
-	// printf("---------------\n");
-	// ft_print_list(*stack_b);
-	// printf("===============\n");
+	printf("===============\n");
+	ft_print_list(*stack_a);
+	printf("---------------\n");
+	ft_print_list(*stack_b);
+	printf("===============\n");
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 	return (0);
