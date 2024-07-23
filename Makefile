@@ -5,7 +5,7 @@ MK = make -s
 MKD = mkdir -p
 RM = rm -rf
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 
 HEADERS = push_swap.h \
 			libft/libft.h \
@@ -16,7 +16,8 @@ SRCs = ft_check_number.c \
 		push_swap.c \
 		ft_utils.c \
 		ft_moves.c \
-		ft_algorithms.c 
+		ft_algorithms.c \
+		ft_full_stack.c
 
 
 DIR_OBJs = OBJECTS

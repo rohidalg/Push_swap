@@ -6,46 +6,31 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/23 16:31:42 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:19:09 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_three_num(t_list **stack_a)
+void	ft_three_num(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*first;
+	int	distance;
 
-	first = *stack_a;
-	if (first->nmb > first->next->next->nmb)
-	{
-		if (first->nmb < first->next->nmb) //(B, C, A)
-			rra(stack_a);
-		else if (first->next->nmb > first->next->next->nmb) //(C, B, A)
-		{
-			sa(stack_a);
-			rra(stack_a);
-		}
-		else //(C, A, B)
-			ra(stack_a);
-	}
-	else if (first->nmb > first->next->nmb) //(B, A, C)
-	{
+	distance = ft_distance(stack_a, ft_little_num(stack_a, MIN));
+	if (distance == 1)
 		sa(stack_a);
-	}
-	else if (first->next->nmb > first->next->next->nmb) //(A, C, B)
-	{
+	else if (distance == 2)
 		rra(stack_a);
+	pb(stack_a, stack_b);
+	if (ft_order(stack_a) != 1)
 		sa(stack_a);
-	}
+	pa(stack_b, stack_a);
 }
 
 void	ft_four_num(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
 
-	// t_list *first;
-	// first = *stack_a;
 	distance = ft_distance(stack_a, ft_little_num(stack_a, MIN));
 	if (distance == 1)
 		sa(stack_a);
@@ -57,7 +42,7 @@ void	ft_four_num(t_list **stack_a, t_list **stack_b)
 	else if (distance == 3)
 		rra(stack_a);
 	pb(stack_a, stack_b);
-	ft_three_num(stack_a);
+	ft_three_num(stack_a, stack_b);
 	pa(stack_b, stack_a);
 }
 
@@ -93,9 +78,11 @@ void	ft_options(t_list **stack_a, t_list **stack_b)
 	if (size == 2 && ft_order(stack_a) != 1)
 		sa(stack_a);
 	else if (size == 3 && ft_order(stack_a) != 1)
-		ft_three_num(stack_a);
+		ft_three_num(stack_a, stack_b);
 	else if (size == 4 && ft_order(stack_a) != 1)
 		ft_four_num(stack_a, stack_b);
 	else if (size == 5 && ft_order(stack_a) != 1)
 		ft_five_num(stack_a, stack_b);
+	else if (size > 5 && ft_order(stack_a) != 1)
+		ft_more_five(stack_a, stack_b);
 }
