@@ -5,7 +5,7 @@ MK = make -s
 MKD = mkdir -p
 RM = rm -rf
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror  -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror  #-fsanitize=address -g3
 
 HEADERS = push_swap.h \
 			libft/libft.h \
