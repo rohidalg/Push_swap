@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/25 19:22:09 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/08/13 17:30:32 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_three_num(t_list **stack_a, t_list **stack_b)
 		sa(stack_a);
 	else if (distance == 2)
 		rra(stack_a);
+	//comprobr si  ya esta ordenado
 	pb(stack_a, stack_b);
 	if (ft_order(stack_a) != 1)
 		sa(stack_a);
