@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/08/13 17:30:32 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:30:08 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_four_num(t_list **stack_a, t_list **stack_b)
 	int	distance;
 
 	distance = ft_distance(stack_a, ft_little_num(stack_a, MIN));
+	// if (ft_order(stack_a) != 1)
+	// 	pa(stack_a, stack_b);
 	if (distance == 1)
 		sa(stack_a);
 	else if (distance == 2)

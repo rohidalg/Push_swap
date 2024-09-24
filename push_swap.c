@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/08/13 17:32:29 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:40:47 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,18 @@ int	main(int argc, char **argv)
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-	ft_putin_stack(stack_a, argc, argv);
-	// //printf("===============\n");
-	// //ft_print_list(*stack_a);
-	// //printf("---------------\n");
-	// //ft_print_list(*stack_b);
-	// //printf("===============\n");
-	
+			ft_putin_stack(stack_a, argc, argv);
+			printf("===============\n");
+			ft_print_list(*stack_a);
+			printf("---------------\n");
+			ft_print_list(*stack_b);
+			printf("===============\n");
 	ft_options(stack_a, stack_b);
-	
-	// //printf("===============\n");
-	// //ft_print_list(*stack_a);
-	// //printf("---------------\n");
-	// //ft_print_list(*stack_b);
-	// //printf("===============\n");
+			printf("===============\n");
+			ft_print_list(*stack_a);
+			printf("---------------\n");
+			ft_print_list(*stack_b);
+			printf("===============\n");
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 	return (0);
@@ -85,16 +83,16 @@ int	main(int argc, char **argv)
 // sb = swap b // intercambia los 2 elementos superiores de la pila b
 // ss = swap a + swap b // tanto sa como sb
 // pa = push a
-	// mueve el elemento superior de la pila b a la parte superior de la pila a
+// mueve el elemento superior de la pila b a la parte superior de la pila a
 // pb = push b
-	// mueve el elemento superior de la pila a a la parte superior de la pila b
+// mueve el elemento superior de la pila a a la parte superior de la pila b
 // ra = rotate a
-	// desplaza todos los elementos de la pila a de abajo hacia arriba
+// desplaza todos los elementos de la pila a de abajo hacia arriba
 // rb = rotate b
-	// desplaza todos los elementos de la pila b de abajo hacia arriba
+// desplaza todos los elementos de la pila b de abajo hacia arriba
 // rr = rotate a + rotate b // tanto ra como rb
 // rra = reverse rotate a
-	// desplaza todos los elementos de la pila a de arriba a abajo
+// desplaza todos los elementos de la pila a de arriba a abajo
 // rrb = reverse rotate b
-	// desplaza todos los elementos de la pila b de arriba a abajo
+// desplaza todos los elementos de la pila b de arriba a abajo
 // rrr = reverse rotate a + reverse rotate b // tanto rra como rrb
