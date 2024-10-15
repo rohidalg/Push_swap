@@ -15,7 +15,7 @@ INCLUDES = -I libft
 SRCs = ft_check_number.c \
 		push_swap.c \
 		ft_utils.c \
-		ft_moves.c \
+		ft_move.c \
 		ft_algorithms.c \
 		ft_full_stack.c
 

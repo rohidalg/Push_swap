@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:28:38 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/09/19 15:21:57 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:02:48 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ int	ft_little_num(t_list **stack_from, int lit)
 {
 	t_list	*first;
 	int		little;
-	
-	if (!stack_from || !(*stack_from))
-        return (0);
 
+	if (!stack_from || !(*stack_from))
+		return (0);
 	first = *stack_from;
 	little = first->nmb;
 	while (first->next)
@@ -31,23 +30,22 @@ int	ft_little_num(t_list **stack_from, int lit)
 	return (little);
 }
 
-int ft_high_num(t_list **stack_from, int max)
+int	ft_high_num(t_list **stack_from, int max)
 {
-	t_list *first;
-	int high;
-	
+	t_list	*first;
+	int		high;
+
 	if (!stack_from || !(*stack_from))
-        return (0);
-	
+		return (0);
 	first = *stack_from;
 	high = first->nmb;
-	while(first->next)
+	while (first->next)
 	{
 		first = first->next;
 		if ((first->nmb > high) && first->nmb != max)
 			high = first->nmb;
 	}
-	return(high);
+	return (high);
 }
 
 int	ft_distance(t_list **stack_from, int nmb)

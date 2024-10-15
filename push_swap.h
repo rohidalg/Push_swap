@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:24:05 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/10/01 11:16:12 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:16:23 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ typedef struct s_stack
 {
 	struct s_list		*first;
 	struct s_move		*move;
+	struct s_cheap		*cheap;
 	struct s_extremes	*extremes;
 }						t_stack;
 
 typedef struct s_move
 {
+	int					cost;
 	int					sa;
 	int					sb;
 	int					ss;
@@ -39,6 +41,22 @@ typedef struct s_move
 	int					rrb;
 	int					rrr;
 }						t_move;
+
+typedef struct s_cheap
+{
+	int					cost;
+	int					sa;
+	int					sb;
+	int					ss;
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
+}						t_cheap;
 
 typedef struct s_extremes
 {
