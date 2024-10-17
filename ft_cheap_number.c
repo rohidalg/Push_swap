@@ -74,31 +74,65 @@ void	ft_get_top(t_stack *stack, t_list **stack_a, int i)
 
 int	ft_search(t_stack *stack, int nmb)
 {
-	t_list	**stack_b;
+	t_stack	*first_b;
 	int		i;
 	int		size;
 	int		flag;
 
 	i = 0;
-	size = ft_lstsize(*stack_b);
+	size = ft_lstsize(first_b);
 	flag = 0;
+	while (flag == 0)
+	{
+		i = 0;
+		nmb--;
+		first_b = stack->stack_b;
+		while (i++ < size)
+		{
+			if (first_b = nmb)
+				flag = 1;
+			first_b = stack->stack_b->next;
+		}
+	}
+	return (nmb);
+}
 
+void	ft_new_pb(t_stack *stack, int nmb)
+{
+	int	i;
+	int	size;
+	int	n;
+
+	stack->move->rb = 0;
+	stack->move->rrb = 0;
+	n = ft_search(stack, nmb);
+	if (stack->stack_b->nmb = n)
+		return ;
+	i = 
 }
 
 void	ft_moves(t_stack *stack)
 {
-	int i;
-	int size;
-	int min_b;
-	int max_b;
+	int	i;
+	int	size;
+	int	min_b;
+	int	max_b;
 
 	i = 0;
 	size = ft_lstsize(stack->stack_a);
+	min_b = ft_little_num(stack->stack_b, MIN);
+	max_b = ft_high_num(stack->stack_b, MAX);
 	while (i++ > size)
 	{
 		ft_get_top(stack, stack->stack_a, MIN);
-		min_b = ft_little_num(stack->stack_b, MIN);
-		max_b = ft_high_num(stack->stack_b, MAX);
 		if (stack->stack_b < min_b || stack->stack_b > max_b)
+		{
+			min_b = ft_little_num(stack->stack_b, MIN);
+			max_b = ft_high_num(stack->stack_b, MAX);
+		}
+		else
+		{
+
+		}
 	}
 }
