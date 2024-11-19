@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:02:02 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/11/05 13:27:10 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/11/13 19:52:09 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_get_top(t_stack *stack, int i)
 	}
 }
 
-int	ft_search(t_stack *stack, t_list **stack_b, int nmb)
+int	ft_search(t_list **stack_b, int nmb)
 {
 	t_list	*first_b;
 	int		i;
@@ -105,7 +105,7 @@ void	ft_new_pb(t_stack *stack, t_list **stack_b, int nmb)
 	first_b = *stack_b;
 	stack->move->rb = 0;
 	stack->move->rrb = 0;
-	n = ft_search(stack, stack_b, nmb);
+	n = ft_search(stack_b, nmb);
 	if (first_b->nmb == n)
 		return ;
 	i = ft_distance(stack_b, nmb);

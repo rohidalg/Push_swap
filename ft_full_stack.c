@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:50:30 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/09/19 17:09:47 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:22:12 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_more_five(t_list **stack_a, t_list **stack_b)
 	int	next_min;
 	int	distance;
 	int	ddistance;
-	int distance_max;
+	int	distance_max;
 	int	size_a;
 	int	size_b;
 
@@ -32,10 +32,8 @@ void	ft_more_five(t_list **stack_a, t_list **stack_b)
 		distance_max = ft_distance(stack_a, (ft_high_num(stack_a, MIN)));
 		if (distance_max < distance || distance_max < ddistance)
 		{
-			printf("entre en distance max");
-			ft_next(stack_a,stack_b);
+			ft_next(stack_a, stack_b);
 		}
-			
 		if (ddistance <= distance)
 		{
 			while (ddistance)
@@ -50,11 +48,9 @@ void	ft_more_five(t_list **stack_a, t_list **stack_b)
 				ddistance = ft_distance(stack_a, min);
 				size_a = ft_lstsize(*stack_a);
 			}
-				printf("entre en ddistance\n");
 		}
 		else
 		{
-			printf("entre en distance\n");
 			while (distance)
 			{
 				ra(stack_a);
@@ -79,36 +75,63 @@ void	ft_more_five(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void ft_next(t_list **stack_from, t_list **stack_to)
+void	ft_next(t_list **stack_from, t_list **stack_to)
 {
-	t_list *first;
-	int high_a;
-	int distance;
-	int reverse;
-	
+	t_list	*first;
+
+	int high_a, distance, reverse;
+	if (!stack_to || !*stack_to)
+		return ;
 	first = *stack_to;
 	high_a = ft_high_num(stack_from, MIN);
-	while(high_a > first->nmb)
+	while (first)
 	{
-		first = first->next;
-		if (first->nmb > high_a)
+		if (high_a > first->nmb)
+			first = first->next;
+		else
+			break ;
+		if (first && first->nmb > high_a)
 		{
 			distance = ft_distance(stack_to, first->nmb);
-			reverse = ft_distance(stack_to, first->nmb);
-			while(distance)
-			{
+			reverse = distance;
+			while (distance--)
 				rra(stack_to);
-				printf("entre en istance");
-				distance--;
-			}
-			while(reverse)
-			{
+			while (reverse--)
 				ra(stack_to);
-				distance--;
-			}
 		}
 	}
 }
 
-//buscar el siguiente max
-//implementar el rrr
+// void ft_next(t_list **stack_from, t_list **stack_to)
+// {
+// 	t_list *first;
+// 	int high_a;
+// 	int distance;
+// 	int reverse;
+
+// 	first = *stack_to;
+// 	high_a = ft_high_num(stack_from, MIN);
+// 	while(high_a > first)
+// 	{
+// 		first = first->next;
+// 		if (first)
+// 		{
+// 			distance = ft_distance(stack_to, first->nmb);
+// 			reverse = ft_distance(stack_to, first->nmb);
+// 			while(distance)
+// 			{
+// 				rra(stack_to);
+// 				//("entre en istance");
+// 				distance--;
+// 			}
+// 			while(reverse)
+// 			{
+// 				ra(stack_to);
+// 				distance--;
+// 			}
+// 		}
+// 	}
+// }
+
+// buscar el siguiente max
+// implementar el rrr
