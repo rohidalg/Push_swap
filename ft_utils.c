@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:28:38 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/10/15 12:02:48 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/11/21 13:25:44 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	ft_little_num(t_list **stack_from, int lit)
 		return (0);
 	first = *stack_from;
 	little = first->nmb;
-	while (first->next)
+	while (first)
 	{
-		first = first->next;
-		if ((first->nmb < little) && first->nmb != lit)
+		if (first->nmb < little && first->nmb != lit)
 			little = first->nmb;
+		first = first->next;
 	}
 	return (little);
 }

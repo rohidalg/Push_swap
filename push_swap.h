@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:24:05 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/11/19 12:31:44 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:32:17 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,42 +21,66 @@
 typedef struct s_stack
 {
 	struct s_list		*first;
-	struct s_move		*move;
-	struct s_cheap		*cheap;
+	// struct s_move		*move;
+	// struct s_cheap		*cheap;
 	struct s_extremes	*extremes;
+	int					move_cost;
+	int move_sa;
+	int move_sb;
+	int move_ss;
+	int move_pa;
+	int move_pb;
+	int move_ra;
+	int move_rb;
+	int move_rr;
+	int move_rra;
+	int move_rrb;
+	int move_rrr;
+	int cheap_cost;
+	int cheap_sa;
+	int cheap_sb;
+	int cheap_ss;
+	int cheap_pa;
+	int cheap_pb;
+	int cheap_ra;
+	int cheap_rb;
+	int cheap_rr;
+	int cheap_rra;
+	int cheap_rrb;
+	int cheap_rrr;
 }						t_stack;
 
-typedef struct s_move
-{
-	int					cost;
-	int					sa;
-	int					sb;
-	int					ss;
-	int					pa;
-	int					pb;
-	int					ra;
-	int					rb;
-	int					rr;
-	int					rra;
-	int					rrb;
-	int					rrr;
-}						t_move;
+// typedef struct s_move
+// {
+// 	int					move_cost;
+// 	int					sa;
+// 	int					sb;
+// 	int					ss;
+// 	int					pa;
+// 	int					pb;
+// 	int					ra;
+// 	int					rb;
+// 	int					rr;
+// 	int					rra;
+// 	int					rrb;
+// 	int					rrr;
+// }						t_move;
 
-typedef struct s_cheap
-{
-	int					cost;
-	int					sa;
-	int					sb;
-	int					ss;
-	int					pa;
-	int					pb;
-	int					ra;
-	int					rb;
-	int					rr;
-	int					rra;
-	int					rrb;
-	int					rrr;
-}						t_cheap;
+// typedef struct s_cheap
+// {
+// 	int cheap_cost;
+// 	int cheap_sa;
+// 	int cheap_sb;
+// 	int cheap_ss;
+// 	int cheap_pa;
+// 	int cheap_pb;
+// 	int cheap_ra;
+// 	int cheap_rb;
+// 	int cheap_rr;
+// 	int cheap_rra;
+// 	int cheap_rrb;
+// 	int cheap_rrr;
+// }						t_cheap;
 
 typedef struct s_extremes
 {

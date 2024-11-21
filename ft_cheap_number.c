@@ -6,69 +6,80 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:02:02 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/11/19 12:31:41 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/11/21 13:23:38 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ft_init_move(t_stack *stack)
+{
+	stack->move_cost = 0;
+	stack->move_pb = 0;
+	stack->move_ra = 0;
+	stack->move_rb = 0;
+	stack->move_rr = 0;
+	stack->move_rra = 0;
+	stack->move_rrb = 0;
+	stack->move_rrr = 0;
+}
+
 void	ft_check_double(t_stack *stack)
 {
-	stack->move->rr = 0;
-	stack->move->rrr = 0;
-	while (stack->move->ra != 0 && stack->move->rb != 0)
+	stack->move_rr = 0;
+	stack->move_rrr = 0;
+	while (stack->move_ra != 0 && stack->move_rb != 0)
 	{
-		stack->move->ra--;
-		stack->move->rb--;
-		stack->move->rr++;
+		stack->move_ra--;
+		stack->move_rb--;
+		stack->move_rr++;
 	}
-	while (stack->move->rra != 0 && stack->move->rrb != 0)
+	while (stack->move_rra != 0 && stack->move_rrb != 0)
 	{
-		stack->move->rra--;
-		stack->move->rrb--;
-		stack->move->rrr++;
+		stack->move_rra--;
+		stack->move_rrb--;
+		stack->move_rrr++;
 	}
 }
 
 void	ft_cost(t_stack *stack, int i)
 {
-	stack->move->cost = stack->move->pb + stack->move->ra + stack->move->rb
-		+ stack->move->rr + stack->move->rra + stack->move->rrb
-		+ stack->move->rrr;
-	if (i == 1 || stack->cheap->cost > stack->move->cost)
+	stack->move_cost = stack->move_pb + stack->move_ra + stack->move_rb + stack->move_rr + stack->move_rra
+		+ stack->move_rrb + stack->move_rrr;
+	if (i == 1 || stack->cheap_cost > stack->move_cost)
 	{
-		stack->cheap->cost = stack->move->cost;
-		stack->cheap->pb = stack->move->pb;
-		stack->cheap->ra = stack->move->ra;
-		stack->cheap->rb = stack->move->rb;
-		stack->cheap->rr = stack->move->rr;
-		stack->cheap->rra = stack->move->rra;
-		stack->cheap->rrb = stack->move->rrb;
-		stack->cheap->rrr = stack->move->rrr;
+		stack->cheap_cost = stack->move_cost;
+		stack->cheap_pb = stack->move_pb;
+		stack->cheap_ra = stack->move_ra;
+		stack->cheap_rb = stack->move_rb;
+		stack->cheap_rr = stack->move_rr;
+		stack->cheap_rra = stack->move_rra;
+		stack->cheap_rrb = stack->move_rrb;
+		stack->cheap_rrr = stack->move_rrr;
 	}
 }
 
-void	ft_get_top(t_stack *stack, int i)
+void	ft_get_top(t_stack *stack, t_list *first_a, int i)
 {
 	int	size;
 
-	stack->move->pb = 1;
-	stack->move->ra = 0;
-	stack->move->rra = 0;
-	size = ft_lstsize(stack->first);
+	stack->move_pb = 1;
+	stack->move_ra = 0;
+	stack->move_rra = 0;
+	size = ft_lstsize(first_a);
 	if (size % 2 == 0)
 	{
 		if (i + 1 > size / 2)
-			stack->move->rra = (size - i);
+			stack->move_rra = (size - i);
 		else
-			stack->move->ra = i;
+			stack->move_ra = i;
 	}
 	else
 	{
 		if (i > size / 2)
-			stack->move->rra = (size - i);
+			stack->move_rra = (size - i);
 		else
-			stack->move->ra = i;
+			stack->move_ra = i;
 	}
 }
 
@@ -103,8 +114,8 @@ void	ft_new_pb(t_stack *stack, t_list **stack_b, int nmb)
 	int		n;
 
 	first_b = *stack_b;
-	stack->move->rb = 0;
-	stack->move->rrb = 0;
+	stack->move_rb = 0;
+	stack->move_rrb = 0;
 	n = ft_search(stack_b, nmb);
 	if (first_b->nmb == n)
 		return ;
@@ -113,16 +124,16 @@ void	ft_new_pb(t_stack *stack, t_list **stack_b, int nmb)
 	if (size % 2 == 0)
 	{
 		if (i + 1 > size / 2)
-			stack->move->rra = (size - i);
+			stack->move_rra = (size - i);
 		else
-			stack->move->ra = i;
+			stack->move_ra = i;
 	}
 	else
 	{
 		if (i > size / 2)
-			stack->move->rra = (size - i);
+			stack->move_rra = (size - i);
 		else
-			stack->move->ra = i;
+			stack->move_ra = i;
 	}
 }
 
@@ -141,17 +152,20 @@ void	ft_moves(t_stack *stack, t_list **stack_a, t_list **stack_b)
 	max_b = ft_high_num(stack_b, MAX);
 	while (i++ < size)
 	{
-		ft_get_top(stack, MIN);
+		printf("antes de entrar a get_top\n\n");
+		ft_init_move(stack);
+		ft_get_top(stack, first_a, i - 1);
 		if (first_a->nmb < min_b || first_a->nmb > max_b)
 		{
 			min_b = ft_little_num(stack_b, MIN);
 			max_b = ft_high_num(stack_b, MAX);
+			printf("el maximo es :%d\n\n", min_b);	
+			printf("el minimo es :%d\n\n", max_b);	
 		}
 		else
-		{
 			ft_new_pb(stack, stack_b, first_a->nmb);
-		}
 		ft_check_double(stack);
+		printf("antes de entrar a cost\n\n");
 		ft_cost(stack, i);
 		first_a = first_a->next;
 	}
