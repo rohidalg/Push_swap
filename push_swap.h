@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:24:05 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/11/14 14:35:58 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:31:44 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ void					ft_four_num(t_list **stack_a, t_list **stack_b);
 void					ft_five_num(t_list **stack_a, t_list **stack_b);
 void					ft_options(t_list **stack_from, t_list **stack_to);
 void					ft_more_five(t_list **stack_a, t_list **stack_b);
+void	ft_moves(t_stack *stack, t_list **stack_a, t_list **stack_b);
 
 #endif

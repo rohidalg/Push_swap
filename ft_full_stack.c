@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:50:30 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/11/19 11:22:12 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:59:42 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,37 +101,3 @@ void	ft_next(t_list **stack_from, t_list **stack_to)
 		}
 	}
 }
-
-// void ft_next(t_list **stack_from, t_list **stack_to)
-// {
-// 	t_list *first;
-// 	int high_a;
-// 	int distance;
-// 	int reverse;
-
-// 	first = *stack_to;
-// 	high_a = ft_high_num(stack_from, MIN);
-// 	while(high_a > first)
-// 	{
-// 		first = first->next;
-// 		if (first)
-// 		{
-// 			distance = ft_distance(stack_to, first->nmb);
-// 			reverse = ft_distance(stack_to, first->nmb);
-// 			while(distance)
-// 			{
-// 				rra(stack_to);
-// 				//("entre en istance");
-// 				distance--;
-// 			}
-// 			while(reverse)
-// 			{
-// 				ra(stack_to);
-// 				distance--;
-// 			}
-// 		}
-// 	}
-// }
-
-// buscar el siguiente max
-// implementar el rrr

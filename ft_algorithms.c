@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/09/23 16:30:08 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:34:32 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_three_num(t_list **stack_a, t_list **stack_b)
 		sa(stack_a);
 	else if (distance == 2)
 		rra(stack_a);
-	//comprobr si  ya esta ordenado
+	// comprobr si  ya esta ordenado
 	pb(stack_a, stack_b);
 	if (ft_order(stack_a) != 1)
 		sa(stack_a);
@@ -75,8 +75,10 @@ void	ft_five_num(t_list **stack_a, t_list **stack_b)
 
 void	ft_options(t_list **stack_a, t_list **stack_b)
 {
-	int	size;
+	t_stack *stack;
+	int size;
 
+	stack = malloc(sizeof(t_stack));
 	size = ft_lstsize(*stack_a);
 	if (size == 2 && ft_order(stack_a) != 1)
 		sa(stack_a);
@@ -87,6 +89,5 @@ void	ft_options(t_list **stack_a, t_list **stack_b)
 	else if (size == 5 && ft_order(stack_a) != 1)
 		ft_five_num(stack_a, stack_b);
 	else if (size > 5 && ft_order(stack_a) != 1)
-		ft_more_five(stack_a, stack_b);
-
+		ft_moves(stack, stack_a, stack_b);
 }
