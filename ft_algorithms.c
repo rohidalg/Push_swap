@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/11/19 12:34:32 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:38:26 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,5 @@ void	ft_options(t_list **stack_a, t_list **stack_b)
 	else if (size == 5 && ft_order(stack_a) != 1)
 		ft_five_num(stack_a, stack_b);
 	else if (size > 5 && ft_order(stack_a) != 1)
-		ft_moves(stack, stack_a, stack_b);
+		ft_move_cheap(stack, stack_a, stack_b);
 }
