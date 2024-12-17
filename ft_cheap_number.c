@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:02:02 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/12/12 13:14:23 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:04:08 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,13 +179,7 @@ void	ft_new_pb(t_stack *stack, t_list **stack_b, int nmb)
 	first_b = *stack_b;
 	stack->move_rb = 0;
 	stack->move_rrb = 0;
-	//AQUI ESTA EL ERROR
-	//EL NUMERO NO LO BUSCA EN EL STACK B
-	//POR ASI DECIRLO ENCUENTRA COMO MAS CERCANO EL MISMO NUMERO QUE EL QUE ESTOY ITERANDO
-	// printf("antes de entrar a ft_new_pb\n\n");
 	n = ft_search(stack_b, nmb);
-	// printf("el numero con el que estoy iterando es %d\n", nmb);
-	// printf("el numero mas cercano es %d\n", n);
 	if (first_b->nmb == n)
 		return ;
 	i = ft_distance(stack_b, n);
@@ -280,15 +274,17 @@ void	ft_move_cheap(t_stack *stack, t_list **stack_a, t_list **stack_b)
 	
 	while (ft_lstsize(*stack_a) > 3)
 	{
-			printf("===============\n");
-			ft_print_list(*stack_a);
-			printf("---------------\n");
-			ft_print_list(*stack_b);
-			printf("===============\n");
+			// printf("===============\n");
+			// ft_print_list(*stack_a);
+			// printf("---------------\n");
+			// ft_print_list(*stack_b);
+			// printf("===============\n");
 		stack->min_b = ft_little_num(stack_b, MIN);
 		stack->max_b = ft_high_num(stack_b, MAX);
 		// printf("hay %i numeros en el stack a\n\n", ft_lstsize(*stack_a));
 		ft_moves(stack, stack_a, stack_b);
 		ft_move_cost(stack, stack_a, stack_b);
 	}
+	ft_three_num(stack_a, stack_b);
+	ft_return(stack, stack_a, stack_b);
 }
