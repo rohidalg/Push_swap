@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:02:02 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/12/17 14:04:08 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:58:14 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -272,7 +272,7 @@ void	ft_move_cheap(t_stack *stack, t_list **stack_a, t_list **stack_b)
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
 	
-	while (ft_lstsize(*stack_a) > 3)
+	while (ft_lstsize(*stack_a) >= 1)
 	{
 			// printf("===============\n");
 			// ft_print_list(*stack_a);
@@ -285,6 +285,8 @@ void	ft_move_cheap(t_stack *stack, t_list **stack_a, t_list **stack_b)
 		ft_moves(stack, stack_a, stack_b);
 		ft_move_cost(stack, stack_a, stack_b);
 	}
-	ft_three_num(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	// ft_three_num(stack_a, stack_b);
+	printf("antes de entrar al return\n");
 	ft_return(stack, stack_a, stack_b);
 }

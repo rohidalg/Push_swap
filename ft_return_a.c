@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:44:59 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/12/17 13:54:54 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:45:13 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_return(t_stack *stack, t_list **stack_a, t_list **stack_b)
 
 	first_a = *stack_a;
 	ft_init_move(stack);
+	printf("inicie los valores\n");
 	if (first_a->nmb != stack->min_a)
 	{
 		i = ft_distance(stack_a, stack->min_a);
@@ -38,6 +39,7 @@ void	ft_return(t_stack *stack, t_list **stack_a, t_list **stack_b)
 			else
 				stack->move_rb = i;
 		}
+		printf("se guardaron los valores\n");
 		ft_move_cost(stack, stack_a, stack_b);
 	}
 }

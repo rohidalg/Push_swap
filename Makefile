@@ -18,7 +18,8 @@ SRCs = ft_check_number.c \
 		ft_moves.c \
 		ft_algorithms.c \
 		ft_full_stack.c \
-		ft_cheap_number.c
+		ft_cheap_number.c \
+		ft_return_a.c
 
 
 DIR_OBJs = OBJECTS
