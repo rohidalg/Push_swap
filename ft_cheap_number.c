@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:02:02 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/12/18 13:58:14 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:38:32 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -286,7 +286,6 @@ void	ft_move_cheap(t_stack *stack, t_list **stack_a, t_list **stack_b)
 		ft_move_cost(stack, stack_a, stack_b);
 	}
 	pb(stack_a, stack_b);
-	// ft_three_num(stack_a, stack_b);
-	printf("antes de entrar al return\n");
+	// printf("antes de entrar al return\n");
 	ft_return(stack, stack_a, stack_b);
 }
