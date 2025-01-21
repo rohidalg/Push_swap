@@ -13,13 +13,15 @@ HEADERS = push_swap.h \
 INCLUDES = -I libft
 
 SRCs = ft_check_number.c \
-		push_swap.c \
-		ft_utils.c \
-		ft_moves.c \
-		ft_algorithms.c \
-		ft_full_stack.c \
 		ft_cheap_number.c \
-		ft_return_a.c
+		ft_algorithms.c \
+		ft_push.c \
+		ft_reverse_rotate.c \
+		ft_rotate.c \
+		ft_search.c \
+		ft_swap.c \
+		ft_utils.c \
+		push_swap.c 
 
 
 DIR_OBJs = OBJECTS

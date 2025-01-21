@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:23:13 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/07/02 15:32:36 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:33:20 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,5 @@ void	ft_check_argv(int argc, char **argv)
 		i++;
 	}
 	if (argc == 2)
-		free(args);
+		ft_free(args);
 }
-
-// ** trabajar tanto con varios numeros como si  llevan ""
-// ** error\n si no son numeros lo que encuentra
-// ** error\n si encuentra repetidos
-// ** error\n si no funcionna con INT_MAX O  INT_MIN

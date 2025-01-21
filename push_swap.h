@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:24:05 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/09 13:39:59 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:34:36 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,41 +51,75 @@ typedef struct s_stack
 	int				max_b;
 }					t_stack;
 
-void				ft_check_argv(int argc, char **argv);
-void				ft_print_list(t_list *stack);
-void				ft_free_stack(t_list **stack);
-int					swap(t_list **stack);
-int					sa(t_list **stack);
-int					sb(t_list **stack);
-int					ss(t_list **stack_a, t_list **stack_b);
-int					push(t_list **stack_to, t_list **stack_from);
-int					pa(t_list **stack_b, t_list **stack_a);
-int					pb(t_list **stack_a, t_list **stack_b);
-int					rotate(t_list **stack_from);
-int					ra(t_list **stack_a);
-int					rb(t_list **stack_b);
-int					rr(t_list **stack_a, t_list **stack_b);
-int					reverse_rotate(t_list **stack_from);
-int					rra(t_list **stack_a);
-int					rrb(t_list **stack_b);
-int					rrr(t_list **stack_a, t_list **stack_b);
-int					ft_little_num(t_list **stack_from, int lit);
-int					ft_high_num(t_list **stack_from, int max);
-void				ft_next(t_list **stack_from, t_list **stack_to);
-int					ft_distance(t_list **stack_from, int nmb);
-int					ft_order(t_list **stack_from);
+//------------------------ft_algorithms.c------------------------//
+
 void				ft_three_num(t_list **stack_a, t_list **stack_b);
 void				ft_four_num(t_list **stack_a, t_list **stack_b);
 void				ft_five_num(t_list **stack_a, t_list **stack_b);
 void				ft_options(t_list **stack_from, t_list **stack_to);
-void				ft_more_five(t_list **stack_a, t_list **stack_b);
+
+//------------------------ft_cheap_number.c------------------------//
+
+// void				ft_init_move(t_stack *stack);
+void				ft_check_double(t_stack *stack);
+void				ft_cost(t_stack *stack, int i);
 void				ft_moves(t_stack *stack, t_list **stack_a,
 						t_list **stack_b);
 void				ft_move_cost(t_stack *stack, t_list **stack_a,
 						t_list **stack_b);
 void				ft_move_cheap(t_stack *stack, t_list **stack_a,
 						t_list **stack_b);
-void				ft_init_move(t_stack *stack);
-void	ft_return(t_stack *stack, t_list **stack_a, t_list **stack_b);
+
+//------------------------ft_check_number.c------------------------//
+
+void				ft_check_argv(int argc, char **argv);
+
+//------------------------ft_push.c------------------------//
+
+int					push(t_list **stack_to, t_list **stack_from);
+int					pa(t_list **stack_b, t_list **stack_a);
+int					pb(t_list **stack_a, t_list **stack_b);
+
+//------------------------ft_reverse_rotate.c------------------------//
+
+int					reverse_rotate(t_list **stack_from);
+int					rra(t_list **stack_a);
+int					rrb(t_list **stack_b);
+int					rrr(t_list **stack_a, t_list **stack_b);
+
+//------------------------ft_rotate.c------------------------//
+
+int					rotate(t_list **stack_from);
+int					ra(t_list **stack_a);
+int					rb(t_list **stack_b);
+int					rr(t_list **stack_a, t_list **stack_b);
+
+//------------------------ft_search.c------------------------//
+
+int					ft_search(t_list **stack_b, int nmb);
+void				ft_get_top_a(t_stack *stack, t_list **stack_a, int i);
+void				ft_get_top_b(t_stack *stack, t_list **stack_b);
+void				ft_new_pb(t_stack *stack, t_list **stack_b, int nmb);
+
+//------------------------ft_swap.c------------------------//
+
+int					swap(t_list **stack);
+int					sa(t_list **stack);
+int					sb(t_list **stack);
+int					ss(t_list **stack_a, t_list **stack_b);
+
+//------------------------ft_utils.c------------------------//
+
+int					ft_little_num(t_list **stack_from, int lit);
+int					ft_high_num(t_list **stack_from, int max);
+int					ft_distance(t_list **stack_from, int nmb);
+int					ft_order(t_list **stack_from);
+void				ft_free_stack(t_list **stack);
+
+//------------------------push_swap.c------------------------//
+
+void				ft_print_list(t_list *stack);
+void				ft_return(t_stack *stack, t_list **stack_a,
+						t_list **stack_b);
 
 #endif
