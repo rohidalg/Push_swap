@@ -57,5 +57,6 @@ int	rrr(t_list **stack_a, t_list **stack_b)
 		return (-1);
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
+	ft_putendl_fd("rrr", 1);
 	return (0);
 }

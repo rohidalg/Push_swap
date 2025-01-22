@@ -6,31 +6,11 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:02:02 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/21 18:07:30 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/22 19:13:17 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	ft_init_move(t_stack *stack)
-// {
-// 	stack->cheap_cost = 0;
-// 	stack->cheap_pb = 0;
-// 	stack->cheap_ra = 0;
-// 	stack->cheap_rb = 0;
-// 	stack->cheap_rr = 0;
-// 	stack->cheap_rra = 0;
-// 	stack->cheap_rrb = 0;
-// 	stack->cheap_rrr = 0;
-// 	stack->move_cost = 0;
-// 	stack->move_pb = 0;
-// 	stack->move_ra = 0;
-// 	stack->move_rb = 0;
-// 	stack->move_rr = 0;
-// 	stack->move_rra = 0;
-// 	stack->move_rrb = 0;
-// 	stack->move_rrr = 0;
-// }
 
 void	ft_check_double(t_stack *stack)
 {
@@ -121,4 +101,3 @@ void	ft_move_cheap(t_stack *stack, t_list **stack_a, t_list **stack_b)
 	pb(stack_a, stack_b);
 	ft_return(stack, stack_a, stack_b);
 }
-	// ft_init_move(stack); va al iniciode la funcion
