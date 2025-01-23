@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/23 16:42:49 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:40:11 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ void	ft_return(t_stack *stack, t_list **stack_a, t_list **stack_b)
 
 	size = ft_lstsize(*stack_b);
 	distance = ft_distance(stack_b, stack->max_b);
-	while (distance-- != 0)
-		rb(stack_b);
+	if (distance != 1)
+		while (distance-- != 0)
+			rb(stack_b);
 	while (size-- != 0)
 		pa(stack_b, stack_a);
 }
