@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 16:57:57 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/21 16:58:18 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/23 19:04:50 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	swap(t_list **stack)
 	first = *stack;
 	next = first->next;
 	if (!first || !next)
-		ft_putendl_fd("ERROR_SWAP", 1);
+		ft_putendl_fd("Error\n", 1);
 	tmp_nmb = first->nmb;
 	tmp_index = first->index;
 	first->nmb = next->nmb;

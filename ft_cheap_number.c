@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:02:02 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/23 17:39:21 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/23 19:00:09 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_check_double(t_stack *stack)
 		stack->move_rrr++;
 	}
 }
+//rebaja los movimientos con rrr cuando hay uno de rr de cada
 
 void	ft_cost(t_stack *stack, int i)
 {
@@ -46,6 +47,7 @@ void	ft_cost(t_stack *stack, int i)
 		stack->cheap_rrr = stack->move_rrr;
 	}
 }
+// cuando encuentra un numero que sea mas barato de mover se guarda
 
 void	ft_moves(t_stack *stack, t_list **stack_a, t_list **stack_b)
 {
@@ -68,6 +70,7 @@ void	ft_moves(t_stack *stack, t_list **stack_a, t_list **stack_b)
 		first_a = first_a->next;
 	}
 }
+//calcula los movimmientos necesarios para mover numeros del stack_a al b
 
 void	ft_move_cost(t_stack *stack, t_list **stack_a, t_list **stack_b)
 {
@@ -86,6 +89,7 @@ void	ft_move_cost(t_stack *stack, t_list **stack_a, t_list **stack_b)
 	while (stack->cheap_pb-- != 0)
 		pb(stack_a, stack_b);
 }
+//ejecuta los movimientos mas bratos que se han encontrado
 
 void	ft_move_cheap(t_stack *stack, t_list **stack_a, t_list **stack_b)
 {
@@ -100,3 +104,5 @@ void	ft_move_cheap(t_stack *stack, t_list **stack_a, t_list **stack_b)
 	}
 	ft_return(stack, stack_a, stack_b);
 }
+//mueve los numeros mas baaratos y los ordena de mayor a menor
+// en el stack_b y los  devuelve al stack_a ordenads de menos a mayor

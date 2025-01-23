@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/23 17:40:11 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:21:07 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_print_list(t_list *stack)
 		tmp = tmp->next;
 	}
 }
+// imprime todos los numeros de la lista
 
 void	ft_return(t_stack *stack, t_list **stack_a, t_list **stack_b)
 {
@@ -38,6 +39,7 @@ void	ft_return(t_stack *stack, t_list **stack_a, t_list **stack_b)
 	while (size-- != 0)
 		pa(stack_b, stack_a);
 }
+//busca el max y lo pone el primero y de ahi lo develve al stack_a
 
 static void	ft_putin_stack(t_list **stack, int argc, char **argv)
 {
@@ -67,6 +69,7 @@ static void	ft_putin_stack(t_list **stack, int argc, char **argv)
 		free(args);
 	}
 }
+// mete los numeros al final del stack
 
 int	main(int argc, char **argv)
 {

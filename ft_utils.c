@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:28:38 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/11/21 13:25:44 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:31:14 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_little_num(t_list **stack_from, int lit)
 	}
 	return (little);
 }
+// busca el minimo dentro del stack
 
 int	ft_high_num(t_list **stack_from, int max)
 {
@@ -47,6 +48,7 @@ int	ft_high_num(t_list **stack_from, int max)
 	}
 	return (high);
 }
+// busca el maximo dentro del stack
 
 int	ft_distance(t_list **stack_from, int nmb)
 {
@@ -64,6 +66,8 @@ int	ft_distance(t_list **stack_from, int nmb)
 	}
 	return (distance);
 }
+//busca la distancia que hay desde el inicio hasta 
+//el numero indicado
 
 int	ft_order(t_list **stack_from)
 {
@@ -78,6 +82,7 @@ int	ft_order(t_list **stack_from)
 	}
 	return (1);
 }
+//comprueba si esta ordenadoo
 
 void	ft_free_stack(t_list **stack)
 {

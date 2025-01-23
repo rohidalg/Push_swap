@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 16:54:27 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/21 18:36:19 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:56:16 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	ft_get_top_a(t_stack *stack, t_list **stack_a, int i)
 			stack->move_ra = i;
 	}
 }
+// comprueba cual es mas barato de llevar a la cima del stack_a
 
 void	ft_get_top_b(t_stack *stack, t_list **stack_b)
 {
@@ -90,6 +91,7 @@ void	ft_get_top_b(t_stack *stack, t_list **stack_b)
 			stack->move_rb = i;
 	}
 }
+//busca el max y lo pone en la cima
 
 void	ft_new_pb(t_stack *stack, t_list **stack_b, int nmb)
 {
@@ -117,3 +119,4 @@ void	ft_new_pb(t_stack *stack, t_list **stack_b, int nmb)
 			stack->move_rb = i;
 	}
 }
+//busca en donde deberia ir el numero en especifico dentro del stack_b

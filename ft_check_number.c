@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:23:13 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/21 18:33:20 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/23 19:04:35 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	ft_check_argv(int argc, char **argv)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
-			ft_putendl_fd("ERROR!!!! \n No es un numero!!", 1);
+			ft_putendl_fd("Error\n", 1);
 		if (ft_check_dupnum(tmp, args, i))
-			ft_putendl_fd("ERROR!!!! \n Numero Duplicado!!", 1);
+			ft_putendl_fd("Error\n", 1);
 		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_putendl_fd("ERROR!!!! \n Es muy grande!!", 1);
+			ft_putendl_fd("Error\n", 1);
 		i++;
 	}
 	if (argc == 2)

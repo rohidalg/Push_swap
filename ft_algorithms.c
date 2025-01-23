@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/21 18:22:51 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:27:39 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_three_num(t_list **stack_a, t_list **stack_b)
 		sa(stack_a);
 	pa(stack_b, stack_a);
 }
+// busca el minimo y lo pasa al stack_b
 
 void	ft_four_num(t_list **stack_a, t_list **stack_b)
 {
@@ -45,6 +46,7 @@ void	ft_four_num(t_list **stack_a, t_list **stack_b)
 	ft_three_num(stack_a, stack_b);
 	pa(stack_b, stack_a);
 }
+// busca el minimo y lo pasa al stack_b y ejecuta la funcion de 3 numeros
 
 void	ft_five_num(t_list **stack_a, t_list **stack_b)
 {
@@ -69,6 +71,7 @@ void	ft_five_num(t_list **stack_a, t_list **stack_b)
 	ft_four_num(stack_a, stack_b);
 	pa(stack_b, stack_a);
 }
+// busca el minimo y lo pasa al stack_b y ejecuta la funcion de 4 numeros
 
 void	ft_options(t_list **stack_a, t_list **stack_b)
 {
@@ -91,3 +94,4 @@ void	ft_options(t_list **stack_a, t_list **stack_b)
 		ft_move_cheap(stack, stack_a, stack_b);
 	free(stack);
 }
+// segun la cantidad de numeros ejecuta unna funcionn distinta
