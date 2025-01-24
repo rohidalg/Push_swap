@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/23 18:21:07 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:12:44 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_return(t_stack *stack, t_list **stack_a, t_list **stack_b)
 	while (size-- != 0)
 		pa(stack_b, stack_a);
 }
-//busca el max y lo pone el primero y de ahi lo develve al stack_a
+// busca el max y lo pone el primero y de ahi lo develve al stack_a
 
 static void	ft_putin_stack(t_list **stack, int argc, char **argv)
 {
@@ -84,7 +84,17 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	*stack_b = NULL;
 	ft_putin_stack(stack_a, argc, argv);
+	// printf("===============\n");
+	// ft_print_list(*stack_a);
+	// printf("---------------\n");
+	// ft_print_list(*stack_b);
+	// printf("===============\n");
 	ft_options(stack_a, stack_b);
+	// printf("===============\n");
+	// ft_print_list(*stack_a);
+	// printf("---------------\n");
+	// ft_print_list(*stack_b);
+	// printf("===============\n");
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 	return (0);

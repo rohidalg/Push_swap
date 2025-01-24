@@ -6,11 +6,19 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:23:13 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/23 19:04:35 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:26:20 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void ft_error()
+{
+	ft_putendl_fd("Error\n", 1);
+	exit(EXIT_FAILURE);
+}
+// CORREGIR ESTO PARA QUE MANDE MENSAJE DE ERROR Y CIERRE.
+// CORREGIR EL CASO DE "10 9..2 1".
 
 static int	ft_check_dupnum(int num, char **argv, int i)
 {
@@ -58,11 +66,11 @@ void	ft_check_argv(int argc, char **argv)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
-			ft_putendl_fd("Error\n", 1);
+			ft_error();
 		if (ft_check_dupnum(tmp, args, i))
-			ft_putendl_fd("Error\n", 1);
+			ft_error();
 		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_putendl_fd("Error\n", 1);
+			ft_error();
 		i++;
 	}
 	if (argc == 2)
