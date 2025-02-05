@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/24 17:12:44 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:38:36 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ void	ft_return(t_stack *stack, t_list **stack_a, t_list **stack_b)
 
 	size = ft_lstsize(*stack_b);
 	distance = ft_distance(stack_b, stack->max_b);
-	if (distance != 1)
-		while (distance-- != 0)
-			rb(stack_b);
+	while (distance-- != 0)
+		rb(stack_b);
 	while (size-- != 0)
 		pa(stack_b, stack_a);
 }
@@ -76,25 +75,15 @@ int	main(int argc, char **argv)
 	t_list	**stack_a;
 	t_list	**stack_b;
 
-	if (argc < 2)
-		return (-1);
+	if (argc < 2 || argv[1][0] == '\0')
+		ft_error();
 	ft_check_argv(argc, argv);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
 	ft_putin_stack(stack_a, argc, argv);
-	// printf("===============\n");
-	// ft_print_list(*stack_a);
-	// printf("---------------\n");
-	// ft_print_list(*stack_b);
-	// printf("===============\n");
 	ft_options(stack_a, stack_b);
-	// printf("===============\n");
-	// ft_print_list(*stack_a);
-	// printf("---------------\n");
-	// ft_print_list(*stack_b);
-	// printf("===============\n");
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 	return (0);

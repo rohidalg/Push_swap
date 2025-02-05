@@ -6,16 +6,16 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:23:13 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/24 18:26:20 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:38:20 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_error()
+void	ft_error(void)
 {
-	ft_putendl_fd("Error\n", 1);
-	exit(EXIT_FAILURE);
+	write(2, "Error\n", 6);
+	_exit(1);
 }
 // CORREGIR ESTO PARA QUE MANDE MENSAJE DE ERROR Y CIERRE.
 // CORREGIR EL CASO DE "10 9..2 1".
@@ -37,7 +37,7 @@ static int	ft_isnum(char *num)
 	int	i;
 
 	i = 0;
-	if (num[0] == '-')
+	if (num[0] == '-' && num[1] != '\0')
 		i++;
 	while (num[i])
 	{
@@ -69,7 +69,7 @@ void	ft_check_argv(int argc, char **argv)
 			ft_error();
 		if (ft_check_dupnum(tmp, args, i))
 			ft_error();
-		if (tmp < -2147483648 || tmp > 2147483647)
+		if (tmp < MIN || tmp > MAX)
 			ft_error();
 		i++;
 	}

@@ -6,17 +6,17 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:10:21 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/06/17 16:59:12 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/03 19:40:23 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+long long int	ft_atoi(const char *s)
 {
-	int	i;
-	int	isneg;
-	int	sum;
+	long long int	i;
+	long long int	isneg;
+	long long int	sum;
 
 	i = 0;
 	isneg = 1;

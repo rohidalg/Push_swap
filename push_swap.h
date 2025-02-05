@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:24:05 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/21 17:34:36 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:05:27 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft/libft.h"
 
-# define MAX 2147483648
+# define MAX 2147483647
 # define MIN -2147483648
 
 typedef struct s_stack
@@ -72,6 +72,7 @@ void				ft_move_cheap(t_stack *stack, t_list **stack_a,
 
 //------------------------ft_check_number.c------------------------//
 
+void				ft_error(void);
 void				ft_check_argv(int argc, char **argv);
 
 //------------------------ft_push.c------------------------//
