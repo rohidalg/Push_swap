@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:28:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/02/05 16:38:36 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/06 15:56:26 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,9 @@ int	main(int argc, char **argv)
 	t_list	**stack_a;
 	t_list	**stack_b;
 
-	if (argc < 2 || argv[1][0] == '\0')
+	if (argc < 2)
+		return (0);
+	if (argv[1][0] == '\0')
 		ft_error();
 	ft_check_argv(argc, argv);
 	stack_a = (t_list **)malloc(sizeof(t_list));
