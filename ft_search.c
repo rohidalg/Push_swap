@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 16:54:27 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/01/23 18:56:16 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/12 12:37:40 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,3 +120,4 @@ void	ft_new_pb(t_stack *stack, t_list **stack_b, int nmb)
 	}
 }
 //busca en donde deberia ir el numero en especifico dentro del stack_b
+// OPTIMIZAR EL FT_SEARCH PARA QUE NO TARDE TANTO CON NUMEROS MUY ALTOS(por el i--)

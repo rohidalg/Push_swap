@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:10:28 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/02/03 18:12:23 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/12 11:51:26 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_three_num(t_list **stack_a, t_list **stack_b)
 	pa(stack_b, stack_a);
 }
 // busca el minimo y lo pasa al stack_b
+// OPTIMIZAR PARA QUE HAGAN MENOS DE 3 MOVIMIENTOS TODOS(poner if)
 
 void	ft_four_num(t_list **stack_a, t_list **stack_b)
 {

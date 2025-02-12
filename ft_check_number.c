@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:23:13 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/02/05 16:38:20 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/12 11:52:31 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static int	ft_isnum(char *num)
 	}
 	return (1);
 }
+// QUE ME COGIERA TAMBIEN EL +
 
 void	ft_check_argv(int argc, char **argv)
 {
